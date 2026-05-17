@@ -1,0 +1,50 @@
+.difficulty-selector {
+  padding: 20px;
+  text-align: center;
+}
+
+.selector-title {
+  color: #25ff6e;
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #25ff6e;
+}
+
+.difficulties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.difficulty-card {
+  background: rgba(10, 15, 30, 0.8);
+  border: 2px solid rgba(37, 255, 110, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.difficulty-card:hover {
+  border-color: #25ff6e;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(37, 255, 110, 0.3);
+}
+
+.difficulty-name {
+  color: #25ff6e;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.difficulty-stats {
+  text-align: left;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.difficulty-stats div {
+  margin: 8px 0;
+}

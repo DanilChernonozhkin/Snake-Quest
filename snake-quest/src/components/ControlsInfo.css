@@ -1,0 +1,25 @@
+/* src/components/ControlsInfo.module.css */
+.controlsInfo {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.8rem 1.2rem;
+  border: 1px solid #0ff;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #0ff;
+}
+
+.controlGroup {
+  margin: 0.3rem 0;
+}
+
+.key {
+  background: #1a0033;
+  border: 1px solid #0ff;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
+  font-weight: bold;
+}

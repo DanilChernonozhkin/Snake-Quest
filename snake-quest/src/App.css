@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #0a1a1a 0%, #0a0f1e 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  padding: 20px;
+}
+
+/* Добавляем дополнительный слой для плавного градиента */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(37, 255, 110, 0.05) 0%, rgba(10, 15, 30, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Анимированные линии на фоне */
+.app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(37, 255, 110, 0.03) 0px, rgba(37, 255, 110, 0.03) 1px, transparent 1px, transparent 50px),
+    repeating-linear-gradient(90deg, rgba(37, 255, 110, 0.03) 0px, rgba(37, 255, 110, 0.03) 1px, transparent 1px, transparent 50px);
+  pointer-events: none;
+  z-index: 0;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.leaderboard-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(37, 255, 110, 0.15), rgba(37, 255, 110, 0.25));
+  border: 2px solid #25ff6e;
+  color: #25ff6e;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(37, 255, 110, 0.3);
+  letter-spacing: 1px;
+}
+
+.leaderboard-btn:hover {
+  background: rgba(37, 255, 110, 0.4);
+  box-shadow: 0 0 20px rgba(37, 255, 110, 0.5);
+  transform: translateX(5px);
+  border-color: #6eff9e;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.pause-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: #25ff6e;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px 40px;
+  border-radius: 16px;
+  font-weight: bold;
+  border: 2px solid #25ff6e;
+  text-shadow: 0 0 10px #25ff6e;
+  z-index: 200;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 4px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Медиазапросы для адаптивности */
+@media (max-width: 768px) {
+  .leaderboard-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .pause-overlay {
+    font-size: 32px;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .leaderboard-btn {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+  
+  .pause-overlay {
+    font-size: 24px;
+    padding: 10px 20px;
+  }
+}
